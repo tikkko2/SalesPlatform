@@ -1,0 +1,144 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="mySidebar2" class="sidebar2" onmouseover="toggleSidebar2()" onmouseout="toggleSidebar2()">
+    <aside class="sidebar-right d-flex align-items-center">
+        <div class="filter-container" id="before_open">
+            <h3 class="filter h3">FILTER</h3>
+        </div>
+        <div class="container-fluid" id="after_open">
+            <div class="row" id="fs_app">
+
+                <form>
+
+                    <section class="col-12" id="fs_header_bar">
+                        <div class="row">
+                            <div class="col-2">
+                                <i class="bi bi-chevron-left"></i>
+                            </div>
+                            <div class="col-10" id="fs_page_title">
+                                Filters
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="col-12" id="fs_price_body">
+                        <div>
+                        <span class="heading">
+                            By Price
+                        </span>
+                            <div class="row">
+                                <input type="range" class="form-range" id="customRange1" onchange="changeRange()">
+                            </div>
+                            <div>
+                                <ul>
+                                    <li class="text-white">$0</li>
+                                    <li class="text-white" id="max_value">$50</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="col-12" id="fs_category_body">
+                    <span class="heading">
+                        By Category
+                    </span>
+                        <div class="contents">
+                            <ul style="list-style: none">
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category-item"/>
+                                        CATEGORY 1
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category-item"/>
+                                        CATEGORY 2
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="checkbox" name="category-item"/>
+                                        CATEGORY 3
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="col-12" id="fs_sort_body">
+                    <span class="heading">
+                        Sort By
+                    </span>
+                        <div class="contents">
+                            <ul style="list-style: none">
+                                <li>
+                                    <label>
+                                        <input type="radio" name="sort-item"/>
+                                        Sort by ascending price
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" name="sort-item"/>
+                                        Sort by descending price
+                                    </label>
+                                </li>
+                                <li>
+                                    <label>
+                                        <input type="radio" checked="checked" name="sort-item"/>
+                                        Normal
+                                    </label>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <button onsubmit="" class="btn btn-primary">Filter</button>
+                </form>
+
+            </div>
+        </div>
+
+    </aside>
+</div>
+
+
+<div id="main">
+
+    <div class="all-product-container">
+        <h1 class="fw-bold text-center mt-4">Kids</h1>
+        <div class="container w-75">
+            <div class="row m-5 p-4">
+
+                {% for product in kids %}
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                        <div class="product-wrapper mb-45 text-center">
+                            <div class="product-img">
+                                <a href="{% url 'products:singleProduct' product.id %}" data-abc="true">
+                                    <img src="{{ product.picture.url }}" alt="" width="400px" height="400px"/>
+                                </a>
+                                <span class="text-center">$ {{ product.price }}</span>
+                                <div class="product-action">
+                                    {% if user.is_authenticated %}
+                                        <div class="product-action-style">
+                                            <a href="{% url 'registration:addToCart' product.id %}"> <i class="bi bi-cart"></i> </a>
+                                        </div>
+                                    {% else %}
+                                        <div class="product-action-style">
+                                            <a href="{% url 'registration:loginPage' %}"> <i class="bi bi-cart"></i> </a>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

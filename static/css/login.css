@@ -1,0 +1,43 @@
+*,
+::after, ::before {
+  box-sizing: border-box;
+  font-family: "Montserrat", serif;
+}
+
+.form-login{
+    border-radius: 0.5rem;
+    padding: 2rem;
+    /* border: #ac7e62 3px solid; */
+    
+}
+
+.form-login h1, .reg-text{
+    color: #825e48;
+}
+
+.form-login .btn, .reg-btn .btn{
+    background-color: #ac7e62;
+    color: white;
+    border: none;
+    transition: 0.3s all ease-in-out;
+}
+
+.form-login .btn:hover, .reg-btn .btn:hover{
+    background-color: #ccac98;
+    color: white;
+    
+}
+
+.register, .login-link{
+    color: #ccac98;
+    text-decoration: none;
+}
+
+.login-link{
+    color: #825e48;
+    text-decoration: none;
+}
+
+.register:hover, .login-link:hover{
+    color: #907a6c;
+}

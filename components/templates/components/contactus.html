@@ -1,0 +1,108 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<div class="main" style="color:black;">
+
+    <div class="container contact-container mb-5">
+        <div class="row">
+            <h1 class="fw-bold text-center mt-4 mb-4">Contact Us</h1>
+        </div>
+        <div class="row">
+            <!--Grid column-->
+            <div class="col-md-6 mb-md-0 mb-5">
+                <p class="text-muted">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+                    facilis voluptatum qui. Qui corporis, dolorem laboriosam mollitia.
+                </p>
+                <p class="text-muted">
+                    Email: example@example.com <br/>
+                    Phone Number: +995 599 111 333
+                </p>
+                <form id="contact-form" name="contact-form" action="https://formspree.io/f/mlezkbyg" method="POST">
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-3">
+                                <label for="name" class="mb-1">First Name</label>
+                                <input type="text" id="firstname" name="firstname" class="form-control"
+                                       placeholder="John"/>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+
+                        <!--Grid column-->
+                        <div class="col-md-6">
+                            <div class="md-form mb-0">
+                                <label for="email" class="mb-1">Last Name</label>
+                                <input type="text" id="lastname" name="lastname" class="form-control"
+                                       placeholder="Smith"/>
+                            </div>
+                        </div>
+                        <!--Grid column-->
+                    </div>
+                    <!--Grid row-->
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-3">
+                                <label for="email" class="mb-1">Email</label>
+                                <input type="text" id="email" name="email" class="form-control"
+                                       placeholder="example@example.com"/>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="md-form mb-3">
+                                <label for="subject" class="mb-1">Subject</label>
+                                <input type="text" id="subject" name="subject" class="form-control"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Grid row-->
+                    <!--Grid row-->
+                    <div class="row">
+                        <!--Grid column-->
+                        <div class="col-md-12">
+                            <div class="md-form mb-3">
+                                <label for="message" class="mb-1">Comments/Questions</label>
+                                <textarea type="text" id="message" name="message" rows="2"
+                                          class="form-control md-textarea" placeholder="Enter text"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Grid row-->
+                </form>
+
+                <div class="text-center text-md-left">
+                    <button class="btn btn-primary btn-lg btn-block mb-4"
+                            onclick="document.getElementById('contact-form').submit();">Submit
+                    </button>
+                </div>
+                <div class="status"></div>
+            </div>
+
+            <!--Grid column-->
+            <div class="col-md-6 text-center p-5">
+                <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23644.168503862104!2d42.70551685!3d42.203306899999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x405cedda7a2ef2d1%3A0xb65f0fc450dc07e6!2z4YOl4YOj4YOX4YOQ4YOY4YOh4YOY4YOhIOGDoeGDkOGDlOGDoOGDl-GDkOGDqOGDneGDoOGDmOGDoeGDnSDhg6Phg5zhg5jhg5Xhg5Thg6Dhg6Hhg5jhg6Lhg5Thg6Lhg5ggfCDhg6jhg5Thg5zhg53hg5Hhg5AgSyB8!5e0!3m2!1ska!2sge!4v1655932785235!5m2!1ska!2sge"
+                        width="100%" height="100%" style="border: 0" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <!--Grid column-->
+
+        </div>
+    </div>
+
+</div>
+
+
+
+{% endblock %}
+

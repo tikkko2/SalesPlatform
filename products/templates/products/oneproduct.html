@@ -1,0 +1,77 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main">
+
+        <div class="container mt-4 mb-4 one-product">
+            <div class="container">
+                <div class="row d-flex justify-content-center align-items-center">
+                    <div class="col-md-10">
+                        <div class="card">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="images">
+                                        <div class="text-center mb-3">
+                                            <img id="main-image" src="{{ product.picture.url }}" width="400px"
+                                                 height="400px">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="product p-4 ">
+                                        <div class="mt-4 mb-3" style="color: black"> <span
+                                                class="text-uppercase text-muted brand">{{ product.name }}</span>
+                                            <h5 class="text-uppercase">{{ product.price }}</h5>
+                                            <h5 class="">{{ product.company_name }}</h5>
+                                            <div class="price d-flex flex-row align-items-center">
+                                                <div class="mx-1">
+                                                    <small class="dis-price">{{ product.price }}</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <p class="about" style="color:black;">
+                                            {{ product.description }}
+                                        </p>
+                                        <div class="sizes mt-5">
+                                            <h6 class="text-uppercase">Size</h6>
+                                            <label class="radio">
+                                                <input type="radio" name="size" value="S" checked>
+                                                <span>S</span>
+                                            </label> <label class="radio">
+                                            <input type="radio" name="size" value="M">
+                                            <span>M</span>
+                                        </label>
+                                            <label class="radio">
+                                                <input type="radio" name="size" value="L">
+                                                <span>L</span>
+                                            </label>
+                                            <label class="radio">
+                                                <input type="radio" name="size" value="XL">
+                                                <span>XL</span>
+                                            </label>
+                                            <label class="radio">
+                                                <input type="radio" name="size" value="XXL">
+                                                <span>XXL</span>
+                                            </label>
+                                        </div>
+                                        <div class="cart mt-4 align-items-center">
+                                             {% if user.is_authenticated %}
+                                            <a href="{% url 'registration:addToCart' product.id %}"> <button class="btn btn-primary mr-2 px-4">Add to cart</button> </a>
+                                    {% else %}
+                                            <a href="{% url 'registration:loginPage' %}"> <button class="btn btn-primary mr-2 px-4">Add to cart</button> </a>
+                                    {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

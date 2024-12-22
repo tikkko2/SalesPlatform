@@ -1,0 +1,45 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="main" style="color: black">
+
+        <div>
+            <h1 class="col text-center mt-5">
+                OUR TEAM
+            </h1>
+            <hr>
+        </div>
+        <div class="m-5">
+            <div class="row text-center">
+                <div class="col-3">
+                    <img src="{% static 'images/team/adam.jpg' %}" class="rounded-circle img-fluid" width="100%" />
+                    <h5 class="mt-4">
+                        Adam Karam Naguib Shehata
+                    </h5>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'images/team/dato.jpg' %}" class="rounded-circle img-fluid" width="100%" />
+                    <h5 class="mt-4">
+                        Davit Petriashvili
+                    </h5>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'images/team/tiko.jpg' %}" class="rounded-circle img-fluid" width="100%" />
+                    <h5 class="mt-4">
+                        Tiko Apridonidze
+                    </h5>
+                </div>
+                <div class="col-3">
+                    <img src="{% static 'images/team/gio.jpg' %}" class="rounded-circle img-fluid" width="100%" />
+                    <h5 class="mt-4">
+                        Giorgi Tsartsidze
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+{% endblock %}

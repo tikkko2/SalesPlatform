@@ -1,0 +1,146 @@
+{% extends 'components/base.html' %}
+{% load static %}
+
+
+<div class="main">
+    <!-- HEADER GOES HERE -->
+    {% block content %}
+
+        <!-- CAROUSEL CONTAINER -->
+        <div id="carouselPics1" class="carousel slide" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPics" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1" style="z-index: -1000;"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cdn11.bigcommerce.com/s-9srn18to/product_images/uploaded_images/carousel-june8.jpg"
+                         class="overlay-image d-block w-100" alt=""/>
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>SUMMER SALE</h1>
+                        <a href="{% url 'products:products' %}">
+                            <button type="button" class="btn btn-lg text-white border-white" style="background-color: #cba284">SHOP NOW</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPics" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPics" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- FISRT MAIN CONTAINER -->
+        <div class="first-main-container m-5">
+            <div class="row">
+                <div class="col-3">
+                    <img src="https://cdn11.bigcommerce.com/s-9srn18to/product_images/uploaded_images/cta-1-june8.jpg"
+                         width="100%"/>
+                </div>
+                <div class="col-3">
+                    <img src="https://cdn11.bigcommerce.com/s-9srn18to/product_images/uploaded_images/cta-2-june8.jpg"
+                         width="100%"/>
+                </div>
+                <div class="col-3">
+                    <img src="https://cdn11.bigcommerce.com/s-9srn18to/product_images/uploaded_images/cta-6c-june8.jpg"
+                         width="100%"/>
+                </div>
+                <div class="col-3">
+                    <img src="https://cdn11.bigcommerce.com/s-9srn18to/product_images/uploaded_images/cta-4-june8c.jpg"
+                         width="100%"/>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT CONTAINER -->
+        <div class="product-container w-100 p-5">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-2">
+                        <img src="images/products/tops.jpg" alt=""/>
+                        <h4 class="h4">TOPS</h4>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/products/shorts.jpg" alt=""/>
+                        <h4>SHORTS</h4>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/products/sweaters.jpg" alt=""/>
+                        <h4>SWEATERS</h4>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/products/bags.jpg" alt=""/>
+                        <h4>BAGS</h4>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/products/shoes.jpg" alt=""/>
+                        <h4>SHOES</h4>
+                    </div>
+                    <div class="col-2">
+                        <img src="images/products/watchgr.jpg" alt=""/>
+                        <h4>ACCESSORIES</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECOND CAROUSEL CONTAINER -->
+        <div id="carouselPics" class="carousel slide mt-5" data-bs-ride="false">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselPics" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1" style="z-index: -1000;"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://cdn11.bigcommerce.com/s-9srn18to/product_images/uploaded_images/l-june8.jpg"
+                         class="overlay-image d-block w-100"/>
+
+                    <div class="carousel-caption d-none d-md-block">
+                        <h1>SUMMER SALE</h1>
+                        <a href="{% url 'products:products' %}">
+                            <button type="button" class="btn btn-lg text-white border-white" style="background-color: #cba284">SHOP NOW</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPics" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPics" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
+        <!-- HOW TO BUY ONLINE CONTAINER -->
+        <div class="buy-online-container mt-5">
+            <div class="container">
+                <h1 class="h1 text-center text-uppercase">How to buy online?</h1>
+                <div class="row">
+                    <div class="col-3">
+                        <p class="m-5">Click the button "buy online"</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="m-5">
+                            Browse the construction product in the desired category
+                        </p>
+                    </div>
+                    <div class="col-3">
+                        <p class="m-5">Click the button "buy" and follow the instruction</p>
+                    </div>
+                    <div class="col-3">
+                        <p class="m-5">
+                            We will deliver the product to the desired address
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    {% endblock %}
